@@ -1,30 +1,25 @@
-import { useEffect } from "react";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom"
+import { useEffect } from "react"
 
 const titleFor = (pathname: string) => {
-  if (pathname.startsWith("/work/proactive-drivers")) return "Proactive Drivers — Yonis Abokar";
-  if (pathname.startsWith("/work/safegpt")) return "SafeGPT — Yonis Abokar";
-  if (pathname.startsWith("/work/learnedwmp")) return "LearnedWMP — Yonis Abokar";
-  if (pathname.startsWith("/experience")) return "Experience — Yonis Abokar";
-  if (pathname === "/") return "Yonis Abokar — Software Engineer";
-  return "Page not found — Yonis Abokar";
-};
+  if (pathname.startsWith("/agent")) return "SafeGPT Health Agent — Yonis Abokar"
+  if (pathname.startsWith("/graphql")) return "Field Desk GraphQL — Yonis Abokar"
+  if (pathname.startsWith("/mesh")) return "Northline — Yonis Abokar"
+  if (pathname.startsWith("/pipeline")) return "Copperline ETL — Yonis Abokar"
+  if (pathname.startsWith("/work/proactive-drivers")) return "Proactive Drivers — Yonis Abokar"
+  if (pathname.startsWith("/work/learnedwmp")) return "LearnedWMP — Yonis Abokar"
+  if (pathname.startsWith("/experience")) return "Experience — Yonis Abokar"
+  if (pathname === "/") return "Yonis Abokar — Software Engineer"
+  return "Page not found — Yonis Abokar"
+}
 
 export default function Layout() {
-  const location = useLocation();
-  const workActive = location.pathname === "/" || location.pathname.startsWith("/work");
+  const location = useLocation()
 
   useEffect(() => {
-    document.title = titleFor(location.pathname);
-    if (location.hash) {
-      const target = document.querySelector(location.hash);
-      if (target) {
-        target.scrollIntoView();
-        return;
-      }
-    }
-    window.scrollTo(0, 0);
-  }, [location.pathname, location.hash]);
+    document.title = titleFor(location.pathname)
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   return (
     <>
@@ -32,16 +27,18 @@ export default function Layout() {
         Skip to content
       </a>
       <header className="site-header">
-        <div className="site-header-inner">
+        <div className="header-inner">
           <Link className="brand" to="/">
             Yonis Abokar
           </Link>
-          <nav className="site-nav" aria-label="Primary">
-            <Link className={workActive ? "active" : undefined} to={{ pathname: "/", hash: "work" }}>
+          <nav className="nav" aria-label="Primary">
+            <NavLink to="/" end>
               Work
-            </Link>
+            </NavLink>
             <NavLink to="/experience">Experience</NavLink>
-            <a href="mailto:yabokar@gmail.com">Email</a>
+            <a className="pill" href="mailto:yabokar@gmail.com">
+              Email
+            </a>
           </nav>
         </div>
       </header>
@@ -49,8 +46,8 @@ export default function Layout() {
         <Outlet />
       </main>
       <footer className="site-footer">
-        <div className="site-footer-inner">
-          <p>Yonis Abokar · Toronto · Software engineer</p>
+        <div className="footer-inner">
+          <p>Yonis Abokar · Toronto</p>
           <p className="footer-links">
             <a href="mailto:yabokar@gmail.com">yabokar@gmail.com</a>
             <a href="https://www.linkedin.com/in/yonisabokar/" target="_blank" rel="noreferrer">
@@ -64,5 +61,5 @@ export default function Layout() {
         </div>
       </footer>
     </>
-  );
+  )
 }

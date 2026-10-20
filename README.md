@@ -1,6 +1,8 @@
 # Yonis Abokar — portfolio
 
-Private site for job applications. It describes three projects. It does not contain the Proactive Drivers source code. That client repository stays private.
+Private repository. The site is the public portfolio. It does not contain the Proactive Drivers source code.
+
+Production client site: https://proactivedriversinc.com/
 
 ## Run
 
