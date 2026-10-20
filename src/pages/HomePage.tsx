@@ -9,8 +9,8 @@ export default function HomePage() {
         <p className="kicker">Toronto · Software Engineer</p>
         <h1>I build products, APIs, and data systems.</h1>
         <p className="lede">
-          Full Stack Developer. The driving-school platform is in production. Each card opens the
-          site: SafeGPT, Field Desk, Northline, and Copperline.
+          Full Stack Developer. The driving-school platform is in production. Relay and SafeGPT are
+          full-stack apps: a client, an API, and a database. Each card opens the site.
         </p>
         <div className="hero-actions">
           <a className="pill" href="mailto:yabokar@gmail.com">

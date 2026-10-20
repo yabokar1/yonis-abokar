@@ -4,7 +4,7 @@ export type Project = {
   summary: string
   status: string
   href: string
-  thumb: "drivers" | "agent" | "graphql" | "mesh" | "pipeline" | "paper"
+  thumb: "drivers" | "agent" | "chat" | "paper"
 }
 
 export const projects: Project[] = [
@@ -17,36 +17,20 @@ export const projects: Project[] = [
     thumb: "drivers",
   },
   {
-    slug: "safegpt-agent",
-    title: "SafeGPT Health Agent",
-    summary: "A health-note site. The agent reads tokens, not names.",
+    slug: "relay",
+    title: "Relay",
+    summary: "Full-stack studio chat. The API stores every message and delivers it live.",
     status: "Live site",
-    href: "https://yabokar1.github.io/safegpt-agent/",
+    href: "https://legends-insider-stored-provider.trycloudflare.com",
+    thumb: "chat",
+  },
+  {
+    slug: "safegpt",
+    title: "SafeGPT",
+    summary: "Full-stack health desk. The API anonymizes the note, then stores the summary.",
+    status: "Live site",
+    href: "https://brand-telephone-reverse-pentium.trycloudflare.com",
     thumb: "agent",
-  },
-  {
-    slug: "field-desk",
-    title: "Field Desk",
-    summary: "A dispatch site. A technician cannot be booked twice in one window.",
-    status: "Live site",
-    href: "https://yabokar1.github.io/field-desk/",
-    thumb: "graphql",
-  },
-  {
-    slug: "northline",
-    title: "Northline",
-    summary: "A shipment site. One order is charged once.",
-    status: "Live site",
-    href: "https://yabokar1.github.io/northline/",
-    thumb: "mesh",
-  },
-  {
-    slug: "copperline",
-    title: "Copperline ETL",
-    summary: "A pipeline site. Bad sensor rows are held. Clean hours are loaded.",
-    status: "Live site",
-    href: "https://yabokar1.github.io/copperline/",
-    thumb: "pipeline",
   },
   {
     slug: "learnedwmp",

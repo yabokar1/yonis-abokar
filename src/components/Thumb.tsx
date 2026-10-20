@@ -3,9 +3,7 @@ import type { Project } from "../content"
 const art: Record<Project["thumb"], { bg: string; fg: string; label: string }> = {
   drivers: { bg: "#111111", fg: "#ffffff", label: "BOOK" },
   agent: { bg: "#14532d", fg: "#ffffff", label: "PHI" },
-  graphql: { bg: "#1e1b4b", fg: "#ffffff", label: "GQL" },
-  mesh: { bg: "#292524", fg: "#ffffff", label: "BUS" },
-  pipeline: { bg: "#0f172a", fg: "#ffffff", label: "ETL" },
+  chat: { bg: "#292524", fg: "#ffffff", label: "CHAT" },
   paper: { bg: "#18181b", fg: "#ffffff", label: "SIG" },
 }
 
@@ -29,31 +27,13 @@ export default function Thumb({ kind }: { kind: Project["thumb"] }) {
             <circle cx="160" cy="74" r="6" fill="#86efac" />
           </>
         )}
-        {kind === "graphql" && (
-          <>
-            <circle cx="160" cy="74" r="18" fill="#818cf8" />
-            <circle cx="70" cy="40" r="10" fill="#c7d2fe" />
-            <circle cx="250" cy="40" r="10" fill="#c7d2fe" />
-            <circle cx="70" cy="112" r="10" fill="#c7d2fe" />
-            <circle cx="250" cy="112" r="10" fill="#c7d2fe" />
-            <path d="M80 46 L146 68 M240 46 L174 68 M80 106 L146 82 M240 106 L174 82" stroke="#c7d2fe" strokeWidth="2" />
-          </>
-        )}
-        {kind === "mesh" && (
+        {kind === "chat" && (
           <>
             <rect x="24" y="54" width="52" height="40" rx="8" fill="#e7e5e4" />
             <rect x="98" y="54" width="52" height="40" rx="8" fill="#e7e5e4" />
             <rect x="172" y="54" width="52" height="40" rx="8" fill="#e7e5e4" />
             <rect x="246" y="54" width="52" height="40" rx="8" fill="#e7e5e4" />
             <path d="M76 74 H98 M150 74 H172 M224 74 H246" stroke="#d6d3d1" strokeWidth="3" />
-          </>
-        )}
-        {kind === "pipeline" && (
-          <>
-            <rect x="28" y="48" width="48" height="64" rx="6" fill="#38bdf8" />
-            <rect x="100" y="36" width="48" height="88" rx="6" fill="#7dd3fc" />
-            <rect x="172" y="56" width="48" height="48" rx="6" fill="#38bdf8" />
-            <rect x="244" y="28" width="48" height="100" rx="6" fill="#e0f2fe" />
           </>
         )}
         {kind === "paper" && (
